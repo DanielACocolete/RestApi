@@ -41,10 +41,10 @@ public class EmployeeController {
             @RequestParam int size
     ) {
         if (page < 0) {
-            return ResponseEntity.badRequest().body("page deve ser > 0");
+            return ResponseEntity.badRequest().body("paginacao deve ser > 0");
         }
         if (size < 0 || size > 500) {
-            return ResponseEntity.badRequest().body("size deve ser <= 500");
+            return ResponseEntity.badRequest().body("o tamanho deve ser <= 500");
         }
         Pageable pageable = PageRequest.of(page, size);
 
